@@ -1,0 +1,134 @@
+.sidebar {
+  width: 190px;
+  height: 100vh;
+  background-color: rgb(64, 81, 137);
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  padding: 20px;
+  /* Hide the scrollbar by default */
+  scrollbar-width: none; /* Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Show scrollbar when scrolling */
+.sidebar.scrolling {
+  scrollbar-width: thin; /* Firefox */
+}
+
+.sidebar.scrolling::-webkit-scrollbar {
+  display: block; /* Chrome, Safari, Edge */
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0.2); /* Scrollbar background */
+}
+
+.sidebar.scrolling::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.6); /* Scrollbar thumb */
+  border-radius: 4px;
+}
+
+/* Logo styles */
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-image {
+  width: 80px;
+  height: auto;
+}
+
+/* Menu styles */
+.menu h6 {
+  color: rgb(171, 185, 232);
+  font-size: 11px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.menu li {
+  margin-bottom: 20px;
+}
+
+/* Links */
+.menu a {
+  color: rgb(171, 185, 232);
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #ffffff;
+}
+
+/* Menu icons */
+.sidebar-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Arrow icons */
+.arrow-icon {
+  margin-left: auto;
+  color: rgb(171, 185, 232);
+  transition: color 0.3s ease;
+}
+
+.menu a:hover .sidebar-icon,
+.menu a:hover .arrow-icon {
+  color: #ffffff;
+}
+
+/* Highlighted links */
+.menu a.apps-link,
+.menu a.apps-link .sidebar-icon,
+.menu a.apps-link .arrow-icon {
+  color: white;
+}
+
+.menu a.apps-link:hover,
+.menu a.apps-link:hover .sidebar-icon,
+.menu a.apps-link:hover .arrow-icon {
+  color: white;
+}
+
+/* Hot badge */
+.hot {
+  color: rgb(255, 255, 255);
+  background-color: rgb(240, 101, 72);
+  font-size: 11.25px;
+  width: 30px;
+  height: 15px;
+  margin-left: auto;
+  padding: 0;
+  border-radius: 4px;
+  border: 1px solid rgb(240, 101, 72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+/* Submenu */
+.submenu {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.submenu a {
+  font-size: 14px;
+}

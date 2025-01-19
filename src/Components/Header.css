@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 230px; /* Sidebar width */
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgb(206, 212, 218); /* Added border */
+  padding-bottom: 0;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  padding-left: 8px; /* Updated to move the menu icon 20px to the right */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: rgb(119, 134, 170); /* Default color */
+}
+
+/* Hover effect */
+.menu-icon:hover {
+  color: rgb(119, 134, 170); /* Maintain the same color on hover */
+  filter: brightness(1.1); /* Slight brightness increase on hover */
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  padding-left: 10px;
+}
+
+/* Removed hover effects for the search container */
+.search-icon {
+  position: absolute;
+  left: 23px;
+  color: rgb(119, 134, 170);
+}
+
+.search-input {
+  width: 165.6px;
+  height: 30.5px;
+  padding: 0 10px 0 40px;
+  border-radius: 4px;
+  border: 1px solid rgb(243, 243, 249);
+  background-color: rgb(243, 243, 249);
+  outline: none; /* Remove focus outline */
+}
+
+/* No additional styles for focus to ensure consistency */
+.search-input:focus {
+  border-color: rgb(243, 243, 249); /* Keep the border color the same */
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgb(119, 134, 170);
+}
+
+.user-avatar-container {
+  display: flex;
+  align-items: center;
+  width: 148px;  /* Set the width */
+  height: 57px; /* Set the height */
+  margin-left: 20px;
+  background-color: rgb(243, 243, 249);
+  margin-right: 22px;
+}
+
+.user-avatar {
+  width: 24px;  /* Avatar size */
+  height: 24px; /* Avatar size */
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.user-name {
+  color: rgb(73, 80, 87);
+  font-size: 13px;
+
+
+}
+
+.user-role {
+  color: rgb(135, 138, 153);
+  font-size: 12px;
+ 
+}
+
+.flag-image {
+  border-radius: 4px;
+}
