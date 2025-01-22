@@ -1,0 +1,85 @@
+/* Custom Dropdown Styles */
+.publishHeadingContainerStyle {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-left: 50px;
+  width: 360px;
+  background-color: white;
+  margin-top: -20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.headingStyle {
+  margin: 0;
+  font-size: 16px;
+  color: rgb(73, 80, 87);
+  font-weight: 500;
+  margin-left: 18px;
+  padding-top: 15px;
+}
+
+.publishFormContainerStyle {
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 330px;
+  margin-top: -20px;
+  margin-left: 50px;
+  height: 130px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.formGroupStyle {
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.labelStyle {
+  display: block;
+  font-weight: 500;
+  color: rgb(33, 37, 41);
+  font-size: 13px;
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-dropdown-button {
+  width: 310px;
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 310px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.custom-dropdown:hover .custom-dropdown-content {
+  display: block;
+}
+
+.custom-dropdown-content div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.custom-dropdown-content div:hover {
+  background-color: #f0f0f0;
+}

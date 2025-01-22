@@ -25,11 +25,14 @@
   display: block; /* Chrome, Safari, Edge */
   width: 8px;
   background-color: rgba(0, 0, 0, 0.2); /* Scrollbar background */
+
 }
 
 .sidebar.scrolling::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.6); /* Scrollbar thumb */
   border-radius: 4px;
+  transition: color 0.3s ease;
+
 }
 
 /* Logo styles */

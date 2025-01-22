@@ -1,0 +1,41 @@
+.publishdiv {
+  background-color: white;
+  margin-left: 50px;
+  width: 360px;
+  height: 130px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+}
+
+.publishhead {
+  margin-top: 25px; /* Margin specifically for the heading text */
+  margin-left: 10px;
+  color: rgb(73, 80, 87);
+  font-size: 15px;/* Optional: Align text to center */
+  font-weight: 100;
+  padding-top: 10px;
+}
+
+
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-group {
+  margin-top: 10px;
+
+}
+
+.date-input-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.publishlabel{
+  padding-left: 10px;
+}

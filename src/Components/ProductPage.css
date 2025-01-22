@@ -1,0 +1,131 @@
+.product-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  height: 350px;
+  width: 700px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 245px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-title-container {
+  margin-bottom: 25px;
+}
+
+.product-description-container {
+  margin-bottom: 25px;
+  width: 680px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: rgb(33, 37, 41);
+  margin-top: -5px;
+  font-family: Poppins, sans-serif;
+  font-weight: 100;
+}
+
+
+.product-description-textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid rgb(206, 212, 218);
+  resize: none;
+  height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea-icons {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid rgb(206, 212, 218);
+  width: 676px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+    justify-content: flex-start;
+  }
+  
+
+
+.textarea-icons svg {
+  cursor: pointer;
+  color:"rgb(33, 37, 41)";
+  
+ 
+
+}
+
+.undo-redo-container {
+  display: flex;
+  gap: 10px; /* Adjust spacing between undo and redo */
+  color: rgb(206, 212, 218); /* Specific color for undo/redo icons */
+}
+
+.other-icons {
+  display: flex;
+  gap: 15px;
+  
+}
+
+
+.product-title-input,
+.product-description-textarea {
+  width: 680px;
+  padding: 8px;
+  border: 1px solid rgb(206, 212, 218);
+  border-radius: 5px;
+  margin-top: -3px;
+  outline: none; /* Prevents the default focus outline */
+}
+
+.product-title-input:focus,
+.product-description-textarea:focus {
+  outline: none; /* Ensures no extra styles on focus */
+  border-color: rgb(206, 212, 218); /* Keeps the border color unchanged */
+}
+
+.paragraph-dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.paragraph-label {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #fff;
+  border: 1px solid rgb(206, 212, 218);
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}

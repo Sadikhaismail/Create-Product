@@ -13,6 +13,8 @@ const Sidebar = () => {
   const [isScrolling, setIsScrolling] = useState(false); // State to track scrolling
 
   useEffect(() => {
+    const sidebarElement = sidebarRef.current; // Store the ref in a local variable
+
     const handleScroll = () => {
       setIsScrolling(true); // Start showing the scrollbar when scrolling
 
@@ -22,14 +24,18 @@ const Sidebar = () => {
 
       scrollTimeout.current = setTimeout(() => {
         setIsScrolling(false); // Stop showing the scrollbar when scrolling stops after 2 seconds
-      }, 2000); // Set timeout for 2 seconds after scrolling stops
+      }, 1000); // Set timeout for 2 seconds after scrolling stops
     };
 
-    window.addEventListener('scroll', handleScroll);
+    if (sidebarElement) {
+      sidebarElement.addEventListener('scroll', handleScroll);
+    }
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (sidebarElement) {
+        sidebarElement.removeEventListener('scroll', handleScroll);
+      }
       if (scrollTimeout.current) {
         clearTimeout(scrollTimeout.current);
       }

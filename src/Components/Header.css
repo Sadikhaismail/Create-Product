@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 230px; /* Sidebar width */
@@ -9,6 +9,9 @@
   z-index: 1000;
   border-bottom: 1px solid rgb(206, 212, 218); /* Added border */
   padding-bottom: 0;
+  background-color: white;
+  box-shadow: 1px 1px 1px  rgba(0,0 , 0, 0.0); /* Adds a subtle shadow */
+
 }
 
 .menu-icon {
