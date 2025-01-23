@@ -4,3 +4,8 @@ body {
   padding: 0; /* Ensures no extra padding */
 }
 
+.publish-form-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px; /* Adjust the spacing from the right edge */
+}

@@ -1,6 +1,5 @@
 /* General styles */
 .form-container {
-  max-width: 800px;
   background: #fff;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -15,12 +14,12 @@
 /* Different heights for each tab */
 .form-container.general-info {
   height: 210px;
-  width: 700px;
+  width: 800px;
 }
 
 .form-container.meta-data {
   height: 240px;
-  width: 700px;
+  width: 800px;
 }
 
 /* Tabs */

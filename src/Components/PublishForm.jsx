@@ -18,7 +18,7 @@ const PublishForm = () => {
   };
 
   return (
-    <div>
+    <div >
       <div className="publishHeadingContainerStyle">
         <h3 className="headingStyle">Publish</h3>
       </div>
