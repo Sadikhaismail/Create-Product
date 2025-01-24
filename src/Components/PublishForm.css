@@ -44,6 +44,7 @@
   font-weight: 500;
   color: rgb(33, 37, 41);
   font-size: 13px;
+  
 }
 
 .custom-dropdown {
@@ -52,7 +53,7 @@
 }
 
 .custom-dropdown-button {
-  width: 310px;
+  width: 350px;
   padding: 7px;
   border: 1px solid #ddd;
   border-radius: 4px;

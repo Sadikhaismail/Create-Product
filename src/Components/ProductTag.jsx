@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./ProductTag.css";
-import ShortDescription from "./ShortDescription";
 
-const ProductTags = () => {
+const ProductTags = ({ onTagsChange }) => {
   const [tags, setTags] = useState(["cotton"]); // Default tag is "cotton"
   const [inputValue, setInputValue] = useState(""); // Input value
   const [showDropdown, setShowDropdown] = useState(false); // Show dropdown when typing
@@ -11,9 +10,11 @@ const ProductTags = () => {
   const handleAddTag = (e) => {
     if (e.key === "Enter" && inputValue.trim() && tags.length === 0) {
       const newTag = `"${inputValue}"`; // Wrap tag in double quotes
-      setTags([newTag]); // Only add the new tag
+      const updatedTags = [newTag]; // Only add the new tag
+      setTags(updatedTags); // Update tags state
       setInputValue(""); // Clear input
       setShowDropdown(false); // Hide dropdown
+      onTagsChange?.(updatedTags); // Notify parent
     } else if (tags.length > 0) {
       alert("Only one tag is allowed!");
     }
@@ -23,6 +24,7 @@ const ProductTags = () => {
   const handleRemoveTag = () => {
     setTags([]); // Clear tags
     setInputValue(""); // Clear input
+    onTagsChange?.([]); // Notify parent of empty tag state
   };
 
   // Handle input change
@@ -40,7 +42,7 @@ const ProductTags = () => {
         <h5 className="productTag">Product Tags</h5>
       </div>
       <div className="cardbody">
-        <div  className="hstack ">
+        <div className="hstack">
           <div className="flex-grow-1">
             <div className="choices">
               <div className="choices__inner">
@@ -53,7 +55,6 @@ const ProductTags = () => {
                     >
                       {tag}
                       <button
-                      
                         type="button"
                         className="choices__button"
                         onClick={handleRemoveTag}
@@ -84,9 +85,6 @@ const ProductTags = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <ShortDescription /> {/* Render ProductCategories here */}
       </div>
     </div>
   );

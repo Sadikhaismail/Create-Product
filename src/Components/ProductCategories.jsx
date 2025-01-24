@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io"; // Import the dropdown icon
 import "./ProductCategories.css"; // Import the CSS file
-import ProductTag from "./ProductTag"; // Import ProductTag component
 
 const ProductCategories = () => {
   const [category, setCategory] = useState("Appliances");
@@ -65,10 +64,7 @@ const ProductCategories = () => {
           </ul>
         )}
       </div>
-      {/* Display the product tag below the category */}
-      <div className="product-tag-section">
-        <ProductTag category={category} />
-      </div>
+      
     </div>
   );
 };

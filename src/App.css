@@ -6,6 +6,9 @@ body {
 
 .publish-form-container {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 20px; /* Adjust the spacing from the right edge */
+  flex-direction: column; /* Stack items vertically */
+  gap: 1rem;
+  margin-left: 1050px;
+  width: 400px; /* Add spacing between components */
 }
+

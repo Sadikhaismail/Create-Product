@@ -76,11 +76,7 @@ const FormComponent = () => {
               <input type="text" placeholder="Orders" />
             </div>
           </div>
-          <div className="submit-button">
-            <button className="submitform" type="submit">
-              Submit
-            </button>
-          </div>
+          
         </form>
       )}
 
@@ -103,9 +99,7 @@ const FormComponent = () => {
               <textarea placeholder="Enter meta description"></textarea>
             </div>
           </div>
-          <div className="submit-button">
-            <button className="submitmeta" type="submit">Submit</button>
-          </div>
+          
         </form>
       )}
     </div>

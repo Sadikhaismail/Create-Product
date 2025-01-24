@@ -1,73 +1,83 @@
 import React, { useState } from "react";
-import PublishSchedule from "./PublishSchedule";
 import { IoIosArrowDown } from "react-icons/io";
 import "./PublishForm.css";
 
-const PublishForm = () => {
-  const [status, setStatus] = useState("Published");
-  const [visibility, setVisibility] = useState("Public");
-  const [statusDropdownOpen, setStatusDropdownOpen] = useState(false);
-  const [visibilityDropdownOpen, setVisibilityDropdownOpen] = useState(false);
+// Reusable Dropdown Component
+const Dropdown = ({ label, options, selectedValue, onSelect, dropdownWidth }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleStatusDropdown = () => {
-    setStatusDropdownOpen(!statusDropdownOpen);
-  };
-
-  const toggleVisibilityDropdown = () => {
-    setVisibilityDropdownOpen(!visibilityDropdownOpen);
-  };
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
-    <div >
+    <div className="formGroupStyle">
+      <label className="labelStyle">{label}</label>
+      <div className="custom-dropdown">
+        <button
+          className="custom-dropdown-button"
+          onClick={toggleDropdown}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
+        >
+          {selectedValue}
+          <IoIosArrowDown style={{ marginLeft: dropdownWidth || "auto" }} />
+        </button>
+        {isOpen && (
+          <div className="custom-dropdown-content">
+            {options.map((option, index) => (
+              <div
+                key={index}
+                className={`dropdown-option ${
+                  selectedValue === option ? "selected-option" : ""
+                }`}
+                onClick={() => {
+                  onSelect(option);
+                  setIsOpen(false);
+                }}
+              >
+                {option}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const PublishForm = ({ onStatusChange, onVisibilityChange }) => {
+  const [status, setStatus] = useState("Published");
+  const [visibility, setVisibility] = useState("Public");
+
+  return (
+    <div>
       <div className="publishHeadingContainerStyle">
         <h3 className="headingStyle">Publish</h3>
       </div>
 
       <div className="publishFormContainerStyle">
         <div className="formContainerStyle">
-          <div className="formGroupStyle">
-            <label className="labelStyle">Status</label>
-            <div className="custom-dropdown">
-              <button
-                className="custom-dropdown-button"
-                onClick={toggleStatusDropdown}
-                aria-haspopup="true"
-                aria-expanded={statusDropdownOpen}
-              >
-                {status} <IoIosArrowDown style={{ marginLeft: "202px" }} />
-              </button>
-              {statusDropdownOpen && (
-                <div className="custom-dropdown-content">
-                  <div onClick={() => { setStatus("Published"); setStatusDropdownOpen(false); }}>Published</div>
-                  <div onClick={() => { setStatus("Draft"); setStatusDropdownOpen(false); }}>Draft</div>
-                  <div onClick={() => { setStatus("Scheduled"); setStatusDropdownOpen(false); }}>Scheduled</div>
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="formGroupStyle">
-            <label className="labelStyle">Visibility</label>
-            <div className="custom-dropdown">
-              <button
-                className="custom-dropdown-button"
-                onClick={toggleVisibilityDropdown}
-                aria-haspopup="true"
-                aria-expanded={visibilityDropdownOpen}
-              >
-                {visibility} <IoIosArrowDown style={{  marginLeft: "225px" }} />
-              </button>
-              {visibilityDropdownOpen && (
-                <div className="custom-dropdown-content">
-                  <div onClick={() => { setVisibility("Public"); setVisibilityDropdownOpen(false); }}>Public</div>
-                  <div onClick={() => { setVisibility("Hidden"); setVisibilityDropdownOpen(false); }}>Hidden</div>
-                </div>
-              )}
-            </div>
-          </div>
+          <Dropdown
+            label="Status"
+            options={["Published", "Draft", "Scheduled"]}
+            selectedValue={status}
+            onSelect={(value) => {
+              setStatus(value);
+              if (onStatusChange) onStatusChange(value);
+            }}
+            dropdownWidth="250px"
+          />
+          <Dropdown
+            label="Visibility"
+            options={["Public", "Hidden"]}
+            selectedValue={visibility}
+            onSelect={(value) => {
+              setVisibility(value);
+              if (onVisibilityChange) onVisibilityChange(value);
+            }}
+            dropdownWidth="270px"
+          />
         </div>
       </div>
-
-      <PublishSchedule />
     </div>
   );
 };
